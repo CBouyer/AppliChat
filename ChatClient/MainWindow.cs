@@ -267,14 +267,31 @@ namespace ChatClient
             }
         }
 
-        private void richMessages_TextChanged_1(object sender, EventArgs e)
+        private void pictureBoxSuppr_Click(object sender, EventArgs e)
         {
-
+            DeleteMessage();
+            this.textMessage.Clear();
+            return;
         }
 
-        private void groupBox1_Enter_1(object sender, EventArgs e)
+        private void pictureBoxSuppr_MouseEnter(object sender, EventArgs e)
         {
+            this.Cursor = Cursors.Hand;
+        }
 
+        private void pictureBoxSuppr_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+        }
+
+        private void pictureBoxEnvoie_MouseEnter(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+        }
+
+        private void pictureBoxEnvoie_MouseLeave(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
         }
     }
 }

@@ -43,10 +43,13 @@
             statusBarInfo = new ToolStripStatusLabel();
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             pictureBoxEnvoie = new PictureBox();
+            pictureBoxSuppr = new PictureBox();
+            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
             statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxEnvoie).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSuppr).BeginInit();
             SuspendLayout();
             // 
             // ipAddressControl1
@@ -191,12 +194,28 @@
             pictureBoxEnvoie.TabIndex = 6;
             pictureBoxEnvoie.TabStop = false;
             pictureBoxEnvoie.Click += pictureBoxEnvoie_Click;
+            pictureBoxEnvoie.MouseEnter += pictureBoxEnvoie_MouseEnter;
+            pictureBoxEnvoie.MouseLeave += pictureBoxEnvoie_MouseLeave;
+            // 
+            // pictureBoxSuppr
+            // 
+            pictureBoxSuppr.Image = Properties.Resources.btn_suppr;
+            pictureBoxSuppr.Location = new Point(484, 455);
+            pictureBoxSuppr.Name = "pictureBoxSuppr";
+            pictureBoxSuppr.Size = new Size(25, 21);
+            pictureBoxSuppr.TabIndex = 7;
+            pictureBoxSuppr.TabStop = false;
+            pictureBoxSuppr.Click += pictureBoxSuppr_Click;
+            pictureBoxSuppr.MouseEnter += pictureBoxSuppr_MouseEnter;
+            pictureBoxSuppr.MouseLeave += pictureBoxSuppr_MouseLeave;
             // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
+            ClientSize = new Size(564, 596);
+            Controls.Add(pictureBoxSuppr);
             ClientSize = new Size(1102, 596);
             Controls.Add(buttonStart);
             Controls.Add(buttonStop);
@@ -222,6 +241,7 @@
             statusBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxEnvoie).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSuppr).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -242,6 +262,7 @@
         private OutilsChat.IPAddressControl ipAddressControl1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private PictureBox pictureBoxEnvoie;
+        private PictureBox pictureBoxSuppr;
     }
 }
 
