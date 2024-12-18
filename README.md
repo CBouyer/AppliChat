@@ -24,7 +24,8 @@ Avant de lancer le programme, assurez-vous d'ajouter les fichiers **.mp3** dans 
 - **Configuration réseau** : sélectionnez le port et le serveur de votre choix.  
 - **Icône d'envoi de message** pour une interface intuitive.  
 - **Icône de suppression** des messages envoyés.  
-- **Son de notification** à chaque envoi de message.  
+- **Son de notification** à chaque envoi de message.
+- **Photo de profil** sélectionnez votre photo de profil.   
 
 
 
