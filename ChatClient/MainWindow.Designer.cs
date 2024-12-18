@@ -42,6 +42,7 @@
             buttonEnvoi = new Button();
             statusBar = new StatusStrip();
             statusBarInfo = new ToolStripStatusLabel();
+            ipAddressControl1 = new OutilsChat.IPAddressControl();
             label3 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
@@ -60,6 +61,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(ipAddressControl1);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(textAlias);
             groupBox1.Controls.Add(buttonStop);
@@ -198,6 +200,17 @@
             statusBarInfo.Name = "statusBarInfo";
             statusBarInfo.Size = new Size(0, 17);
             // 
+            // ipAddressControl1
+            // 
+            ipAddressControl1.BackColor = SystemColors.Control;
+            ipAddressControl1.IPAddress = "0.0.0.0";
+            ipAddressControl1.IsSubnetMask = false;
+            ipAddressControl1.Location = new Point(61, 23);
+            ipAddressControl1.Margin = new Padding(4, 3, 4, 3);
+            ipAddressControl1.Name = "ipAddressControl1";
+            ipAddressControl1.Size = new Size(177, 23);
+            ipAddressControl1.TabIndex = 6;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -230,7 +243,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonStart;
         private System.Windows.Forms.Label label2;
-        private OutilsChat.IPAddressControl ipAddressControl1;
+        
         private System.Windows.Forms.RichTextBox richMessages;
         private System.Windows.Forms.TextBox textMessage;
         private System.Windows.Forms.Button buttonEnvoi;
@@ -239,6 +252,7 @@
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textAlias;
+        private OutilsChat.IPAddressControl ipAddressControl1;
     }
 }
 
