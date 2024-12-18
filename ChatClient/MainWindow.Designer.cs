@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            groupBox1 = new GroupBox();
             ipAddressControl1 = new OutilsChat.IPAddressControl();
             labelUtilisateur = new Label();
             textAlias = new TextBox();
@@ -44,47 +43,29 @@
             statusBarInfo = new ToolStripStatusLabel();
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             pictureBoxEnvoie = new PictureBox();
-            groupBox1.SuspendLayout();
+            pictureBoxSuppr = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
             statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxEnvoie).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSuppr).BeginInit();
             SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            groupBox1.Controls.Add(ipAddressControl1);
-            groupBox1.Controls.Add(labelUtilisateur);
-            groupBox1.Controls.Add(textAlias);
-            groupBox1.Controls.Add(buttonStop);
-            groupBox1.Controls.Add(label2);
-            groupBox1.Controls.Add(numericPort);
-            groupBox1.Controls.Add(label1);
-            groupBox1.Controls.Add(buttonStart);
-            groupBox1.Location = new Point(14, 14);
-            groupBox1.Margin = new Padding(4);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Padding = new Padding(4);
-            groupBox1.Size = new Size(536, 94);
-            groupBox1.TabIndex = 0;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "Configuration";
             // 
             // ipAddressControl1
             // 
             ipAddressControl1.BackColor = SystemColors.Control;
             ipAddressControl1.IPAddress = "0.0.0.0";
             ipAddressControl1.IsSubnetMask = false;
-            ipAddressControl1.Location = new Point(61, 23);
+            ipAddressControl1.Location = new Point(894, 33);
             ipAddressControl1.Margin = new Padding(4, 3, 4, 3);
             ipAddressControl1.Name = "ipAddressControl1";
-            ipAddressControl1.Size = new Size(177, 23);
+            ipAddressControl1.Size = new Size(195, 38);
             ipAddressControl1.TabIndex = 6;
             // 
             // labelUtilisateur
             // 
             labelUtilisateur.AutoSize = true;
-            labelUtilisateur.Location = new Point(218, 59);
+            labelUtilisateur.Location = new Point(0, 116);
             labelUtilisateur.Margin = new Padding(4, 0, 4, 0);
             labelUtilisateur.Name = "labelUtilisateur";
             labelUtilisateur.Size = new Size(66, 15);
@@ -93,7 +74,7 @@
             // 
             // textAlias
             // 
-            textAlias.Location = new Point(287, 55);
+            textAlias.Location = new Point(69, 112);
             textAlias.Margin = new Padding(4);
             textAlias.Name = "textAlias";
             textAlias.Size = new Size(116, 23);
@@ -101,7 +82,7 @@
             // 
             // buttonStop
             // 
-            buttonStop.Location = new Point(414, 24);
+            buttonStop.Location = new Point(1001, 140);
             buttonStop.Margin = new Padding(4);
             buttonStop.Name = "buttonStop";
             buttonStop.Size = new Size(88, 26);
@@ -114,7 +95,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(7, 28);
+            label2.Location = new Point(840, 47);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
             label2.Size = new Size(46, 15);
@@ -123,7 +104,7 @@
             // 
             // numericPort
             // 
-            numericPort.Location = new Point(312, 25);
+            numericPort.Location = new Point(998, 93);
             numericPort.Margin = new Padding(4);
             numericPort.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
             numericPort.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
@@ -136,7 +117,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(265, 28);
+            label1.Location = new Point(951, 96);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
             label1.Size = new Size(38, 15);
@@ -145,7 +126,7 @@
             // 
             // buttonStart
             // 
-            buttonStart.Location = new Point(414, 24);
+            buttonStart.Location = new Point(1001, 140);
             buttonStart.Margin = new Padding(4);
             buttonStart.Name = "buttonStart";
             buttonStart.Size = new Size(88, 26);
@@ -157,18 +138,18 @@
             // richMessages
             // 
             richMessages.BackColor = SystemColors.ButtonFace;
-            richMessages.Location = new Point(14, 114);
+            richMessages.Location = new Point(237, 116);
             richMessages.Margin = new Padding(4);
             richMessages.Name = "richMessages";
             richMessages.ReadOnly = true;
-            richMessages.Size = new Size(536, 332);
+            richMessages.Size = new Size(649, 332);
             richMessages.TabIndex = 1;
             richMessages.Text = "";
             // 
             // textMessage
             // 
             textMessage.Enabled = false;
-            textMessage.Location = new Point(14, 454);
+            textMessage.Location = new Point(330, 466);
             textMessage.Margin = new Padding(4);
             textMessage.Multiline = true;
             textMessage.Name = "textMessage";
@@ -183,7 +164,7 @@
             statusBar.Location = new Point(0, 574);
             statusBar.Name = "statusBar";
             statusBar.Padding = new Padding(1, 0, 17, 0);
-            statusBar.Size = new Size(564, 22);
+            statusBar.Size = new Size(1102, 22);
             statusBar.TabIndex = 5;
             statusBar.Text = "statusStrip1";
             // 
@@ -205,45 +186,64 @@
             // pictureBoxEnvoie
             // 
             pictureBoxEnvoie.Image = Properties.Resources.logo_send__1_;
-            pictureBoxEnvoie.Location = new Point(484, 482);
+            pictureBoxEnvoie.Location = new Point(821, 497);
             pictureBoxEnvoie.Name = "pictureBoxEnvoie";
             pictureBoxEnvoie.Size = new Size(65, 48);
             pictureBoxEnvoie.TabIndex = 6;
             pictureBoxEnvoie.TabStop = false;
             pictureBoxEnvoie.Click += pictureBoxEnvoie_Click;
+            pictureBoxEnvoie.MouseEnter += pictureBoxEnvoie_MouseEnter;
+            pictureBoxEnvoie.MouseLeave += pictureBoxEnvoie_MouseLeave;
+            // 
+            // pictureBoxSuppr
+            // 
+            pictureBoxSuppr.Image = Properties.Resources.btn_suppr;
+            pictureBoxSuppr.Location = new Point(298, 476);
+            pictureBoxSuppr.Name = "pictureBoxSuppr";
+            pictureBoxSuppr.Size = new Size(25, 27);
+            pictureBoxSuppr.TabIndex = 7;
+            pictureBoxSuppr.TabStop = false;
+            pictureBoxSuppr.Click += pictureBoxSuppr_Click;
+            pictureBoxSuppr.MouseEnter += pictureBoxSuppr_MouseEnter;
+            pictureBoxSuppr.MouseLeave += pictureBoxSuppr_MouseLeave;
             // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
-            ClientSize = new Size(564, 596);
+            ClientSize = new Size(1102, 596);
+            Controls.Add(pictureBoxSuppr);
+            Controls.Add(buttonStart);
+            Controls.Add(buttonStop);
+            Controls.Add(ipAddressControl1);
+            Controls.Add(numericPort);
+            Controls.Add(label1);
             Controls.Add(axWindowsMediaPlayer1);
+            Controls.Add(labelUtilisateur);
+            Controls.Add(label2);
             Controls.Add(pictureBoxEnvoie);
+            Controls.Add(textAlias);
             Controls.Add(statusBar);
             Controls.Add(textMessage);
             Controls.Add(richMessages);
-            Controls.Add(groupBox1);
             Margin = new Padding(4);
             MaximizeBox = false;
             Name = "MainWindow";
             Text = "VirtueChat";
             FormClosing += MainWindow_FormClosing;
             Load += MainWindow_Load;
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericPort).EndInit();
             statusBar.ResumeLayout(false);
             statusBar.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxEnvoie).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxSuppr).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.NumericUpDown numericPort;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonStart;
@@ -259,6 +259,7 @@
         private OutilsChat.IPAddressControl ipAddressControl1;
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private PictureBox pictureBoxEnvoie;
+        private PictureBox pictureBoxSuppr;
     }
 }
 
