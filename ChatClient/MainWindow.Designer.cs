@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Label label3;
             groupBox1 = new GroupBox();
-            label4 = new Label();
+            ipAddressControl1 = new OutilsChat.IPAddressControl();
+            labelUtilisateur = new Label();
             textAlias = new TextBox();
             buttonStop = new Button();
             label2 = new Label();
@@ -42,27 +42,15 @@
             buttonEnvoi = new Button();
             statusBar = new StatusStrip();
             statusBarInfo = new ToolStripStatusLabel();
-            ipAddressControl1 = new OutilsChat.IPAddressControl();
-            label3 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
             statusBar.SuspendLayout();
             SuspendLayout();
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(493, 454);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(53, 15);
-            label3.TabIndex = 4;
-            label3.Text = "Message";
-            // 
             // groupBox1
             // 
             groupBox1.Controls.Add(ipAddressControl1);
-            groupBox1.Controls.Add(label4);
+            groupBox1.Controls.Add(labelUtilisateur);
             groupBox1.Controls.Add(textAlias);
             groupBox1.Controls.Add(buttonStop);
             groupBox1.Controls.Add(label2);
@@ -78,15 +66,26 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "Configuration";
             // 
-            // label4
+            // ipAddressControl1
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(218, 59);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 5;
-            label4.Text = "Alias :";
+            ipAddressControl1.BackColor = SystemColors.Control;
+            ipAddressControl1.IPAddress = "0.0.0.0";
+            ipAddressControl1.IsSubnetMask = false;
+            ipAddressControl1.Location = new Point(61, 23);
+            ipAddressControl1.Margin = new Padding(4, 3, 4, 3);
+            ipAddressControl1.Name = "ipAddressControl1";
+            ipAddressControl1.Size = new Size(177, 23);
+            ipAddressControl1.TabIndex = 6;
+            // 
+            // labelUtilisateur
+            // 
+            labelUtilisateur.AutoSize = true;
+            labelUtilisateur.Location = new Point(218, 59);
+            labelUtilisateur.Margin = new Padding(4, 0, 4, 0);
+            labelUtilisateur.Name = "labelUtilisateur";
+            labelUtilisateur.Size = new Size(66, 15);
+            labelUtilisateur.TabIndex = 5;
+            labelUtilisateur.Text = "Utilisateur :";
             // 
             // textAlias
             // 
@@ -175,7 +174,7 @@
             // buttonEnvoi
             // 
             buttonEnvoi.Enabled = false;
-            buttonEnvoi.Location = new Point(486, 472);
+            buttonEnvoi.Location = new Point(485, 463);
             buttonEnvoi.Margin = new Padding(4);
             buttonEnvoi.Name = "buttonEnvoi";
             buttonEnvoi.Size = new Size(66, 86);
@@ -200,17 +199,6 @@
             statusBarInfo.Name = "statusBarInfo";
             statusBarInfo.Size = new Size(0, 17);
             // 
-            // ipAddressControl1
-            // 
-            ipAddressControl1.BackColor = SystemColors.Control;
-            ipAddressControl1.IPAddress = "0.0.0.0";
-            ipAddressControl1.IsSubnetMask = false;
-            ipAddressControl1.Location = new Point(61, 23);
-            ipAddressControl1.Margin = new Padding(4, 3, 4, 3);
-            ipAddressControl1.Name = "ipAddressControl1";
-            ipAddressControl1.Size = new Size(177, 23);
-            ipAddressControl1.TabIndex = 6;
-            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -218,7 +206,6 @@
             ClientSize = new Size(564, 596);
             Controls.Add(statusBar);
             Controls.Add(buttonEnvoi);
-            Controls.Add(label3);
             Controls.Add(textMessage);
             Controls.Add(richMessages);
             Controls.Add(groupBox1);
@@ -250,7 +237,7 @@
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel statusBarInfo;
         private System.Windows.Forms.Button buttonStop;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label labelUtilisateur;
         private System.Windows.Forms.TextBox textAlias;
         private OutilsChat.IPAddressControl ipAddressControl1;
     }
