@@ -39,12 +39,13 @@
             buttonStart = new Button();
             richMessages = new RichTextBox();
             textMessage = new TextBox();
-            buttonEnvoi = new Button();
             statusBar = new StatusStrip();
             statusBarInfo = new ToolStripStatusLabel();
+            pictureBoxEnvoie = new PictureBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
             statusBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEnvoie).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -152,6 +153,7 @@
             // 
             // richMessages
             // 
+            richMessages.BackColor = SystemColors.ButtonFace;
             richMessages.Location = new Point(14, 114);
             richMessages.Margin = new Padding(4);
             richMessages.Name = "richMessages";
@@ -171,18 +173,6 @@
             textMessage.Size = new Size(463, 104);
             textMessage.TabIndex = 2;
             // 
-            // buttonEnvoi
-            // 
-            buttonEnvoi.Enabled = false;
-            buttonEnvoi.Location = new Point(485, 463);
-            buttonEnvoi.Margin = new Padding(4);
-            buttonEnvoi.Name = "buttonEnvoi";
-            buttonEnvoi.Size = new Size(66, 86);
-            buttonEnvoi.TabIndex = 3;
-            buttonEnvoi.Text = "Envoyer";
-            buttonEnvoi.UseVisualStyleBackColor = true;
-            buttonEnvoi.Click += buttonEnvoi_Click;
-            // 
             // statusBar
             // 
             statusBar.ImageScalingSize = new Size(20, 20);
@@ -199,13 +189,24 @@
             statusBarInfo.Name = "statusBarInfo";
             statusBarInfo.Size = new Size(0, 17);
             // 
+            // pictureBoxEnvoie
+            // 
+            pictureBoxEnvoie.Image = Properties.Resources.logo_send__1_;
+            pictureBoxEnvoie.Location = new Point(484, 482);
+            pictureBoxEnvoie.Name = "pictureBoxEnvoie";
+            pictureBoxEnvoie.Size = new Size(65, 48);
+            pictureBoxEnvoie.TabIndex = 6;
+            pictureBoxEnvoie.TabStop = false;
+            pictureBoxEnvoie.Click += pictureBoxEnvoie_Click;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(564, 596);
+            Controls.Add(pictureBoxEnvoie);
             Controls.Add(statusBar);
-            Controls.Add(buttonEnvoi);
             Controls.Add(textMessage);
             Controls.Add(richMessages);
             Controls.Add(groupBox1);
@@ -214,11 +215,13 @@
             Name = "MainWindow";
             Text = "VirtueChat";
             FormClosing += MainWindow_FormClosing;
+            Load += MainWindow_Load;
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericPort).EndInit();
             statusBar.ResumeLayout(false);
             statusBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEnvoie).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -233,13 +236,13 @@
         
         private System.Windows.Forms.RichTextBox richMessages;
         private System.Windows.Forms.TextBox textMessage;
-        private System.Windows.Forms.Button buttonEnvoi;
         private System.Windows.Forms.StatusStrip statusBar;
         private System.Windows.Forms.ToolStripStatusLabel statusBarInfo;
         private System.Windows.Forms.Button buttonStop;
         private System.Windows.Forms.Label labelUtilisateur;
         private System.Windows.Forms.TextBox textAlias;
         private OutilsChat.IPAddressControl ipAddressControl1;
+        private PictureBox pictureBoxEnvoie;
     }
 }
 
