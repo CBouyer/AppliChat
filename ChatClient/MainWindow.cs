@@ -15,25 +15,45 @@ namespace ChatClient
     {
         private GestionChat comm;
         private IniFile configFile;
-        private Dictionary<int, Color> clients;
         internal WelcomeWindow welcome;
+        private Dictionary<int, Color> clients;
+        private List<Color> predefinedColors = new List<Color>
+        {
+            Color.Cyan,
+            Color.LightGreen,
+            Color.LightPink,
+            Color.MediumPurple,
+            Color.Orange,
+            Color.Plum,
+            Color.Turquoise,
+            Color.AliceBlue,
+            Color.Aqua,
+            Color.Magenta,
+            Color.IndianRed,
+        };
+
+        private Color pseudoColor;
+
 
         public MainWindow()
         {
             InitializeComponent();
             comm = null;
-            //
+
             configFile = new IniFile(AppDomain.CurrentDomain.BaseDirectory + "config.ini");
             int port = configFile.ReadValue("Server", "Port", 18);
             String ipAddress = configFile.ReadValue("Server", "IPAddress", "127.0.0.1");
             String alias = configFile.ReadValue("User", "Alias", "JohnDoe");
-            //
+
             this.numericPort.Value = port;
             this.ipAddressControl1.IPAddress = ipAddress;
             this.textAlias.Text = alias;
-            //
+
             this.Text += " " + Constants.APP_VERSION;
             this.clients = new Dictionary<int, Color>();
+
+            Random random = new Random();
+            pseudoColor = predefinedColors[random.Next(predefinedColors.Count)];
         }
 
         private void buttonStart_Click(object sender, EventArgs e)
@@ -112,23 +132,24 @@ namespace ChatClient
 
         private void AjoutMessage(OutilsChat.Message msg, Color clr)
         {
-            //
             int beforeAppend = this.richMessages.TextLength;
             this.richMessages.AppendText(msg.Param1 + " - " + DateTime.Now.ToString() + Environment.NewLine);
             int afterAppend = this.richMessages.TextLength;
             this.richMessages.Select(beforeAppend, afterAppend - beforeAppend);
-            this.richMessages.SelectionColor = clr;
+            this.richMessages.SelectionColor = pseudoColor;
+
             System.Drawing.Font currentFont = richMessages.SelectionFont;
-            System.Drawing.FontStyle newFontStyle;
-            newFontStyle = FontStyle.Bold;
-            richMessages.SelectionFont = new Font( currentFont, newFontStyle );
-            //
+            System.Drawing.FontStyle newFontStyle = FontStyle.Bold;
+            richMessages.SelectionFont = new Font(currentFont, newFontStyle);
+
             beforeAppend = this.richMessages.TextLength;
             this.richMessages.AppendText(msg.Texte + Environment.NewLine);
             afterAppend = this.richMessages.TextLength;
             this.richMessages.Select(beforeAppend, afterAppend - beforeAppend);
             this.richMessages.SelectionColor = clr;
         }
+
+
 
         private Color RandomColor()
         {
@@ -173,17 +194,57 @@ namespace ChatClient
 
         private void buttonEnvoi_Click(object sender, EventArgs e)
         {
+            string userInput = this.textMessage.Text.Trim();
+            if (userInput == "/deleteMessages")
+            {
+                DeleteMessage();
+                this.textMessage.Clear();
+                return;
+            }
             if (comm != null)
             {
-                this.comm.Ecrire(this.textMessage.Text);
-                //
-                OutilsChat.Message newMessage = new OutilsChat.Message(0, this.textMessage.Text);
+                this.comm.Ecrire(userInput);
+                OutilsChat.Message newMessage = new OutilsChat.Message(0, userInput);
                 newMessage.Envoi(this.textAlias.Text);
                 this.AjoutMessage(newMessage, Color.Black);
+                this.textMessage.Clear();
             }
         }
 
+        private void DeleteMessage()
+        {
+            if (this.richMessages.TextLength == 0) return;
+
+            int lastMessageIndex = this.richMessages.Text.LastIndexOf(Environment.NewLine, this.richMessages.TextLength - 2);
+
+            if (lastMessageIndex >= 0)
+            {
+                this.richMessages.Text = this.richMessages.Text.Substring(0, lastMessageIndex).TrimEnd();
+            }
+            else
+            {
+                this.richMessages.Clear();
+            }
+        }
+
+
+
         private void textMessage_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void richMessages_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ipAddressControl1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }
