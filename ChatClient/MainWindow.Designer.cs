@@ -43,7 +43,7 @@
             statusBarInfo = new ToolStripStatusLabel();
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             pictureBoxEnvoie = new PictureBox();
-            pictureBoxSuppr = new PictureBox(); 
+            pictureBoxSuppr = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
             statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
