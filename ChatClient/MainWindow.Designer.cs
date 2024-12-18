@@ -43,8 +43,7 @@
             statusBarInfo = new ToolStripStatusLabel();
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             pictureBoxEnvoie = new PictureBox();
-            pictureBoxSuppr = new PictureBox();
-            groupBox1.SuspendLayout();
+            pictureBoxSuppr = new PictureBox(); 
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
             statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
@@ -146,7 +145,6 @@
             richMessages.Size = new Size(649, 332);
             richMessages.TabIndex = 1;
             richMessages.Text = "";
-            richMessages.TextChanged += richMessages_TextChanged_1;
             // 
             // textMessage
             // 
