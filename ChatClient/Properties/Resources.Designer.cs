@@ -81,6 +81,16 @@ namespace ChatClient.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] send_notif {
+            get {
+                object obj = ResourceManager.GetObject("send_notif", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap VIRTUE__1___1___1_ {

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
             groupBox1 = new GroupBox();
             ipAddressControl1 = new OutilsChat.IPAddressControl();
             labelUtilisateur = new Label();
@@ -42,9 +43,11 @@
             buttonEnvoi = new Button();
             statusBar = new StatusStrip();
             statusBarInfo = new ToolStripStatusLabel();
+            axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
             statusBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             SuspendLayout();
             // 
             // groupBox1
@@ -199,11 +202,22 @@
             statusBarInfo.Name = "statusBarInfo";
             statusBarInfo.Size = new Size(0, 17);
             // 
+            // axWindowsMediaPlayer1
+            // 
+            axWindowsMediaPlayer1.Enabled = true;
+            axWindowsMediaPlayer1.Location = new Point(484, 556);
+            axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            axWindowsMediaPlayer1.OcxState = (AxHost.State)resources.GetObject("axWindowsMediaPlayer1.OcxState");
+            axWindowsMediaPlayer1.Size = new Size(75, 23);
+            axWindowsMediaPlayer1.TabIndex = 6;
+            axWindowsMediaPlayer1.Visible = false;
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(564, 596);
+            Controls.Add(axWindowsMediaPlayer1);
             Controls.Add(statusBar);
             Controls.Add(buttonEnvoi);
             Controls.Add(textMessage);
@@ -219,6 +233,7 @@
             ((System.ComponentModel.ISupportInitialize)numericPort).EndInit();
             statusBar.ResumeLayout(false);
             statusBar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,6 +255,7 @@
         private System.Windows.Forms.Label labelUtilisateur;
         private System.Windows.Forms.TextBox textAlias;
         private OutilsChat.IPAddressControl ipAddressControl1;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
 
