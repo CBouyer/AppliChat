@@ -1,5 +1,5 @@
 
-# Bienvenue sur l'application de messagerie **Virtue**
+# Bienvenue sur l'application de messagerie **Virtue** 💫
 
 ## Pré-requis
 Avant de lancer le programme, assurez-vous d'ajouter les fichiers **.mp3** dans la racine du projet ( click droit sur la solution "Open Folder in File Explorer" :  
