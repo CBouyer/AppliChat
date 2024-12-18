@@ -183,7 +183,7 @@
             statusBar.Location = new Point(0, 574);
             statusBar.Name = "statusBar";
             statusBar.Padding = new Padding(1, 0, 17, 0);
-            statusBar.Size = new Size(566, 22);
+            statusBar.Size = new Size(564, 22);
             statusBar.TabIndex = 5;
             statusBar.Text = "statusStrip1";
             // 
