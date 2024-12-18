@@ -238,6 +238,19 @@ namespace ChatClient
         private void pictureBoxEnvoie_Click(object sender, EventArgs e)
         {
             string userInput = this.textMessage.Text.Trim();
+            string filePath = Path.Combine(Application.StartupPath, "send_notif.mp3");
+
+            // Vérifie si le fichier existe
+            if (File.Exists(filePath))
+            {
+                axWindowsMediaPlayer1.URL = filePath;
+                axWindowsMediaPlayer1.settings.volume = 50; // Met le volume à 50%
+                axWindowsMediaPlayer1.Ctlcontrols.play();    // Lance la lecture
+            }
+            else
+            {
+                MessageBox.Show("Fichier introuvable : " + filePath, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             if (userInput == "/deleteMessages")
             {
                 DeleteMessage();
