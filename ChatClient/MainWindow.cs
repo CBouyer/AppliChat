@@ -16,6 +16,7 @@ namespace ChatClient
         private GestionChat comm;
         private IniFile configFile;
         private Dictionary<int, Color> clients;
+        internal WelcomeWindow welcome;
 
         public MainWindow()
         {
@@ -158,6 +159,7 @@ namespace ChatClient
                 this.comm.OnClientDisconnected = null;
                 this.comm.Stop();
             }
+            this.welcome.Close();
         }
 
         private void buttonStop_Click(object sender, EventArgs e)

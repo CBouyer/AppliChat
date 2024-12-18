@@ -48,7 +48,7 @@ namespace ChatClient
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
-
+            mainWindow.welcome = this;
             mainWindow.Show();
             this.Hide();
         }
@@ -57,7 +57,7 @@ namespace ChatClient
         private void pictureBox1_MouseEnter_1(object sender, EventArgs e)
         {
             this.Cursor = Cursors.Hand;
-            pictureBox1.Image = Properties.Resources.bouton;
+            pictureBox1.Image = Properties.Resources.bouton_click;
         }
 
         private void pictureBox1_MouseLeave_1(object sender, EventArgs e)

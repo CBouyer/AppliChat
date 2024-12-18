@@ -73,6 +73,16 @@ namespace ChatClient.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bouton_click {
+            get {
+                object obj = ResourceManager.GetObject("bouton_click", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap VIRTUE__1___1___1_ {
             get {
                 object obj = ResourceManager.GetObject("VIRTUE (1) (1) (1)", resourceCulture);
