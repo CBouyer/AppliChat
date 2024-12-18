@@ -44,7 +44,6 @@
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             pictureBoxEnvoie = new PictureBox();
             pictureBoxSuppr = new PictureBox();
-            groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
             statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
@@ -146,7 +145,6 @@
             richMessages.Size = new Size(649, 332);
             richMessages.TabIndex = 1;
             richMessages.Text = "";
-            richMessages.TextChanged += richMessages_TextChanged_1;
             // 
             // textMessage
             // 
@@ -200,9 +198,9 @@
             // pictureBoxSuppr
             // 
             pictureBoxSuppr.Image = Properties.Resources.btn_suppr;
-            pictureBoxSuppr.Location = new Point(484, 455);
+            pictureBoxSuppr.Location = new Point(298, 476);
             pictureBoxSuppr.Name = "pictureBoxSuppr";
-            pictureBoxSuppr.Size = new Size(25, 21);
+            pictureBoxSuppr.Size = new Size(25, 27);
             pictureBoxSuppr.TabIndex = 7;
             pictureBoxSuppr.TabStop = false;
             pictureBoxSuppr.Click += pictureBoxSuppr_Click;
@@ -214,9 +212,8 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
-            ClientSize = new Size(564, 596);
-            Controls.Add(pictureBoxSuppr);
             ClientSize = new Size(1102, 596);
+            Controls.Add(pictureBoxSuppr);
             Controls.Add(buttonStart);
             Controls.Add(buttonStop);
             Controls.Add(ipAddressControl1);
