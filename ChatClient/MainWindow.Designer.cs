@@ -180,7 +180,7 @@
             statusBar.Location = new Point(0, 574);
             statusBar.Name = "statusBar";
             statusBar.Padding = new Padding(1, 0, 17, 0);
-            statusBar.Size = new Size(564, 22);
+            statusBar.Size = new Size(566, 22);
             statusBar.TabIndex = 5;
             statusBar.Text = "statusStrip1";
             // 
@@ -204,7 +204,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
-            ClientSize = new Size(564, 596);
+            ClientSize = new Size(566, 596);
             Controls.Add(pictureBoxEnvoie);
             Controls.Add(statusBar);
             Controls.Add(textMessage);

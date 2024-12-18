@@ -253,5 +253,7 @@ namespace ChatClient
                 this.textMessage.Clear();
             }
         }
+
+       
     }
 }
