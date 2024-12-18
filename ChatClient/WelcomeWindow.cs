@@ -30,6 +30,8 @@ namespace ChatClient
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
+            pictureBox1.MouseEnter += pictureBox1_MouseEnter_1;
+            pictureBox1.MouseLeave += pictureBox1_MouseLeave_1;
             // 
             // WelcomeWindow
             // 
@@ -46,9 +48,22 @@ namespace ChatClient
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
-            
+
             mainWindow.Show();
             this.Hide();
+        }
+
+
+        private void pictureBox1_MouseEnter_1(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Hand;
+            pictureBox1.Image = Properties.Resources.bouton;
+        }
+
+        private void pictureBox1_MouseLeave_1(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.Default;
+            pictureBox1.Image = Properties.Resources.bouton;
         }
     }
 }
