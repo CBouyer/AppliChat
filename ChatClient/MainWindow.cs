@@ -248,5 +248,15 @@ namespace ChatClient
         {
 
         }
+
+        private void richMessages_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

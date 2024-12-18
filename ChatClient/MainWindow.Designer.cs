@@ -65,6 +65,7 @@
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Configuration";
+            groupBox1.Enter += groupBox1_Enter_1;
             // 
             // ipAddressControl1
             // 
@@ -159,6 +160,7 @@
             richMessages.Size = new Size(536, 332);
             richMessages.TabIndex = 1;
             richMessages.Text = "";
+            richMessages.TextChanged += richMessages_TextChanged_1;
             // 
             // textMessage
             // 
