@@ -293,5 +293,29 @@ namespace ChatClient
         {
             this.Cursor = Cursors.Default;
         }
+
+        private void pictureBoxPDP_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.CheckFileExists = true;
+            openFileDialog.Filter = " Fichier Png |*.png|Tous les fichiers|*.*";
+
+            if(openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                this.pictureBoxPDP.Text = openFileDialog.FileName;
+                try
+                {
+                    //mettre l'image sélectionnée dans la PictureBox
+                    pictureBoxPDP.Image = Image.FromFile(openFileDialog.FileName);
+
+                    //ajuster la taille de l'image pour s'adapter à la PictureBox
+                    pictureBoxPDP.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Erreur lors du chargement de l'image : {ex.Message}", "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }

@@ -44,11 +44,14 @@
             axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             pictureBoxEnvoie = new PictureBox();
             pictureBoxSuppr = new PictureBox();
+            pictureBoxPDP = new PictureBox();
+            labelPDP = new Label();
             ((System.ComponentModel.ISupportInitialize)numericPort).BeginInit();
             statusBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxEnvoie).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSuppr).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPDP).BeginInit();
             SuspendLayout();
             // 
             // ipAddressControl1
@@ -65,7 +68,7 @@
             // labelUtilisateur
             // 
             labelUtilisateur.AutoSize = true;
-            labelUtilisateur.Location = new Point(0, 116);
+            labelUtilisateur.Location = new Point(0, 140);
             labelUtilisateur.Margin = new Padding(4, 0, 4, 0);
             labelUtilisateur.Name = "labelUtilisateur";
             labelUtilisateur.Size = new Size(66, 15);
@@ -74,7 +77,7 @@
             // 
             // textAlias
             // 
-            textAlias.Location = new Point(69, 112);
+            textAlias.Location = new Point(69, 132);
             textAlias.Margin = new Padding(4);
             textAlias.Name = "textAlias";
             textAlias.Size = new Size(116, 23);
@@ -207,12 +210,33 @@
             pictureBoxSuppr.MouseEnter += pictureBoxSuppr_MouseEnter;
             pictureBoxSuppr.MouseLeave += pictureBoxSuppr_MouseLeave;
             // 
+            // pictureBoxPDP
+            // 
+            pictureBoxPDP.Image = Properties.Resources.png_pdp__1_;
+            pictureBoxPDP.Location = new Point(28, 12);
+            pictureBoxPDP.Name = "pictureBoxPDP";
+            pictureBoxPDP.Size = new Size(118, 84);
+            pictureBoxPDP.TabIndex = 8;
+            pictureBoxPDP.TabStop = false;
+            pictureBoxPDP.Click += pictureBoxPDP_Click;
+            // 
+            // labelPDP
+            // 
+            labelPDP.AutoSize = true;
+            labelPDP.Location = new Point(12, 101);
+            labelPDP.Name = "labelPDP";
+            labelPDP.Size = new Size(166, 15);
+            labelPDP.TabIndex = 9;
+            labelPDP.Text = "Choisissez une photo de profil";
+            // 
             // MainWindow
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.InactiveCaption;
             ClientSize = new Size(1102, 596);
+            Controls.Add(labelPDP);
+            Controls.Add(pictureBoxPDP);
             Controls.Add(pictureBoxSuppr);
             Controls.Add(buttonStart);
             Controls.Add(buttonStop);
@@ -239,6 +263,7 @@
             ((System.ComponentModel.ISupportInitialize)axWindowsMediaPlayer1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxEnvoie).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSuppr).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxPDP).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -260,6 +285,8 @@
         private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private PictureBox pictureBoxEnvoie;
         private PictureBox pictureBoxSuppr;
+        private PictureBox pictureBoxPDP;
+        private Label labelPDP;
     }
 }
 
