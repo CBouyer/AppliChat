@@ -80,7 +80,7 @@ namespace ChatClient
                     this.buttonStart.Visible = false;
                     this.buttonStop.Visible = true;
                     this.textMessage.Enabled = true;
-                    this.buttonEnvoi.Enabled = true;
+                    this.pictureBoxEnvoie.Enabled = true;
                     this.AfficherInfo("Connection sur " + this.ipAddressControl1.IPAddress + ":" + this.numericPort.Value + ".");
                 }
                 else
@@ -107,7 +107,7 @@ namespace ChatClient
             this.buttonStart.Visible = true;
             this.buttonStop.Visible = false;
             this.textMessage.Enabled = false;
-            this.buttonEnvoi.Enabled = false;
+            this.pictureBoxEnvoie.Enabled = false;
             this.comm.Stop();
             this.comm = null;
         }
@@ -192,25 +192,6 @@ namespace ChatClient
             }
         }
 
-        private void buttonEnvoi_Click(object sender, EventArgs e)
-        {
-            string userInput = this.textMessage.Text.Trim();
-            if (userInput == "/deleteMessages")
-            {
-                DeleteMessage();
-                this.textMessage.Clear();
-                return;
-            }
-            if (comm != null)
-            {
-                this.comm.Ecrire(userInput);
-                OutilsChat.Message newMessage = new OutilsChat.Message(0, userInput);
-                newMessage.Envoi(this.textAlias.Text);
-                this.AjoutMessage(newMessage, Color.Black);
-                this.textMessage.Clear();
-            }
-        }
-
         private void DeleteMessage()
         {
             if (this.richMessages.TextLength == 0) return;
@@ -247,6 +228,43 @@ namespace ChatClient
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBoxEnvoie_Click(object sender, EventArgs e)
+        {
+            string userInput = this.textMessage.Text.Trim();
+            string filePath = Path.Combine(Application.StartupPath, "send_notif.mp3");
+
+            // Vérifie si le fichier existe
+            if (File.Exists(filePath))
+            {
+                axWindowsMediaPlayer1.URL = filePath;
+                axWindowsMediaPlayer1.settings.volume = 50; // Met le volume à 50%
+                axWindowsMediaPlayer1.Ctlcontrols.play();    // Lance la lecture
+            }
+            else
+            {
+                MessageBox.Show("Fichier introuvable : " + filePath, "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            if (userInput == "/deleteMessages")
+            {
+                DeleteMessage();
+                this.textMessage.Clear();
+                return;
+            }
+            if (comm != null)
+            {
+                this.comm.Ecrire(userInput);
+                OutilsChat.Message newMessage = new OutilsChat.Message(0, userInput);
+                newMessage.Envoi(this.textAlias.Text);
+                this.AjoutMessage(newMessage, Color.Black);
+                this.textMessage.Clear();
+            }
         }
 
         private void richMessages_TextChanged_1(object sender, EventArgs e)
